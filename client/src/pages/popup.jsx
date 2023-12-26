@@ -15,7 +15,7 @@ const ForgotPassword = ({ onCancel }) => {
   
     try {
       // Assuming you have the 'password' state in your component
-      const response = await axios.post('http://localhost:3001/auth/forgot-password', {
+      const response = await axios.post('https://arjit-mern-sl2-server.vercel.app/auth/forgot-password', {
         email,
         newPassword: newPassword, // Include the new password in the request
       });
@@ -86,7 +86,7 @@ const Popup = ({ onClose, isPopupVisible }) => {
       userData[key] = value;
     });
 
-    const apiUrl = isSignUp ? 'http://localhost:3001/auth/register' : 'http://localhost:3001/auth/login';
+    const apiUrl = isSignUp ? 'https://arjit-mern-sl2-server.vercel.app/auth/register' : 'https://arjit-mern-sl2-server.vercel.app/auth/login';
 
     try {
       const response = await fetch(apiUrl, {
