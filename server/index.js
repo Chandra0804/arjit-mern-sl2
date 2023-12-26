@@ -52,38 +52,6 @@ app.post('/auth/register', (req, res) => {
 /*ROUTES*/
 app.use("/auth",authRoutes);
 
-// Create a Mongoose schema and model
-const contactSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
-  subject: String,
-  message: String,
-});
-
-const Contact = mongoose.model('Contact', contactSchema);
-// Endpoint to handle form submissions
-app.post('/submitForm', (req, res) => {
-  const { name, email, phone, subject, message } = req.body;
-
-  // Create a new Contact instance
-  const newContact = new Contact({
-    name,
-    email,
-    phone,
-    subject,
-    message,
-  });
-
-  // Save the new contact to the database
-  newContact.save()
-  .then(() => {
-    res.status(200).send('Contact saved successfully');
-  })
-  .catch((err) => {
-    res.status(500).send('Error saving contact to the database');
-  });
-});
 
 /*MONGOOSE SETUP*/
 const PORT = process.env.PORT || 6001;
