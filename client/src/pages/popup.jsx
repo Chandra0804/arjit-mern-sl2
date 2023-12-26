@@ -9,7 +9,8 @@ const ForgotPassword = ({ onCancel }) => {
   const [email, setEmail] = useState('');
   const [newPassword, setNewPassword] = useState(''); // New state for the new password
   const [resetSent, setResetSent] = useState(false);
-
+  axios.defaults.withCredentials = true;
+  
   const handleForgotPassword = async (e) => {
     e.preventDefault();
   
