@@ -10,7 +10,7 @@ import User from "./models/User.js";
 /* CONFIGURATIONS */
 dotenv.config();
 const allowedOrigins = [
-  "https://nayepankh-react-frontend.vercel.app",
+  "https://arjit-mern-sl2.vercel.app",
   "http://localhost:3000",
 ];
 const app = express();
